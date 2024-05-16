@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional HTML Webpage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      margin-top: 100px;
+    }
+    h1 {
+      font-size: 48px;
+      color: #333;
+    }
+    p {
+      font-size: 20px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+    .btn {
+      padding: 15px 30px;
+      font-size: 18px;
+      margin: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #000;
+      color: #fff;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+        color: #000;
+      background-color: #D3d3d3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Blockchain based Certificate Verification</h1>
+    <p>Empowering trust in certificates: blockchain's immutable ledger ensures authenticity.</p>
+    <a href="/add" class="btn" style="text-decoration: none;">Add</a>
+    <a href="/verify" class="btn" style="text-decoration: none;">Verify</a>
+  </div>
+  <script src="{{ url_for('static', filename='js/test.js')}}"></script>
+</body>
+</html>

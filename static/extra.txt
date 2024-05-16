@@ -1,0 +1,31 @@
+{# <script>
+        function verifyCertificate() {
+            console.log("Verifying certificate...");  
+            var hashCode = document.getElementById("hashCode").value;
+            console.log("Hash code:", hashCode);  
+    
+            // Display "Verifying..." while waiting for the result
+            document.getElementById("verificationResult").innerHTML = "Verifying...";
+    
+            // Make an AJAX request to Flask route '/verify' with the hash code
+            fetch('/verify', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({hashCode: hashCode}),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Update the content of the grey-box with the verification result
+                if (data.result) {
+                    document.getElementById("verificationResult").innerHTML = "Verification successful";
+                } else {
+                    document.getElementById("verificationResult").innerHTML = "Verification failed";
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script> #}
