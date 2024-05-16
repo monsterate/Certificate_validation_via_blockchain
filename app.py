@@ -13,7 +13,7 @@ infura_url = 'https://sepolia.infura.io/v3/3de4de810fe54166bd043b152d234ce8'
 w3 = Web3(Web3.HTTPProvider(infura_url))
 
 # Account private key
-private_key = "private_key"
+private_key = "464467895760ab76a5388f21a48e067ab92b495ff229abae5b6d7bfb39d03bd1"
 
 # Convert private key to account object
 account = Account.from_key(private_key)
