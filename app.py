@@ -9,14 +9,11 @@ from eth_account import Account
 
 app = Flask(__name__)
 
-
 infura_url = 'https://sepolia.infura.io/v3/3de4de810fe54166bd043b152d234ce8'
 w3 = Web3(Web3.HTTPProvider(infura_url))
-# web3 = Web3(Web3.HTTPProvider('http://127.0.0.1:7545'))
-# web3 = Web3(Web3.HTTPProvider('https://sepolia.infura.io/v3/3de4de810fe54166bd043b152d234ce8'))
 
 # Account private key
-private_key = "464467895760ab76a5388f21a48e067ab92b495ff229abae5b6d7bfb39d03bd1"
+private_key = "private_key"
 
 # Convert private key to account object
 account = Account.from_key(private_key)
@@ -137,20 +134,6 @@ def add():
     # return render_template('add.html')
     return render_template('add.html', hashed = hashed_data)
 
-# def store_hash_on_blockchain(hash_value):
-#     # Convert hash value to bytes32
-#     hash_bytes32 = HexBytes(hash_value)
-
-#     # Interact with the smart contract to store hash on blockchain
-#     # tx_hash = contract.functions.addCertificateHash(hash_bytes32).transact()
-#     try:
-#         tx_hash = contract.functions.addCertificateHash(hash_bytes32).transact({'from': "0xE13228DFcF56e23813dE70b06E189bD7a7C462a6"})
-#         receipt = web3.eth.wait_for_transaction_receipt(tx_hash)
-#         return receipt
-#     except Exception as e:
-#         print("Error occurred during transaction:", e)
-#         return None  # Or handle the error appropriately
-
 # Function to send signed transaction
 def send_signed_transaction(tx):
     raw_tx = account.sign_transaction(tx)
@@ -208,6 +191,4 @@ def product():
     return 'This is Products Page.'
 
 if __name__ == "__main__":
-    # with app.app_context():
-    #     db.create_all()
     app.run(debug=True, port=8000)
