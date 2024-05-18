@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+        .container {
+            max-width: 700px;
+            padding: 100px;
+            border: 2px solid #ced4da;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #000;
+        }
+        label {
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #000;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            color: #000;
+      background-color: #D3d3d3;
+        }
+        .btn {
+            padding: 10px 105px;
+            font-size: 16px;
+            margin: 1px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #000;
+            color: #fff;
+            transition: background-color 0.3s;
+          }
+          .btn:hover {
+              color: #000;
+            background-color: #D3d3d3;}
+        .grey-box {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+        }
+        .output-text {
+            font-size: 16px;
+            margin: 0;
+        }
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login Page</h1>
+        <form id="certificateForm" method="POST" action="/login">
+            <input type="text" id="username" name="username" placeholder="Username" required><br><br>
+            <input type="password" id="password" name="password" placeholder="password" required><br><br>
+            <button type="submit">Login</button><br/>
+            <a href="/" class="btn" style="text-decoration: none;">Home</a>
+        </form>
+        {% if error %}
+            <p class="error-message">{{ error }}</p>
+        {% endif %}
+    </div>
+    
+</body>
+</html>
