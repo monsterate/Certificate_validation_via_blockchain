@@ -1,10 +1,10 @@
-This is blockchain project made using flask.
+#This is blockchain project made using flask.
 
-Firstly make virtual environment for the project
-command: python -m venv <environment name>
+##Firstly make virtual environment for the project
+* command: python -m venv <environment name>
 
-To use this project you need to install the requirements.txt
-command: pip install -r requirements.txt
+##To use this project you need to install the requirements.txt
+* command: pip install -r requirements.txt
 
 Now flask app is ready lets setup the blockchain
 
