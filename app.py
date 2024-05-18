@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from datetime import datetime
 from web3 import Web3
 from hexbytes import HexBytes
@@ -185,6 +185,19 @@ def verify():
             result = "Unsucessfull"
         print("Result:", result)
     return render_template('verify.html' , result= result)
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        if username == "admin" and password == '12345':
+            return redirect(url_for('add'))
+        else:
+            error = "Incorrect username or password"
+    return render_template('login.html', error=error)
+
 
 @app.route('/products')
 def product():
